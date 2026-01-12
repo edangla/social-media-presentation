@@ -51,7 +51,6 @@
       height: 100%;
       padding: 88px 72px 52px;
       box-sizing: border-box;
-      position: relative;
       color: var(--text);
     }
 
@@ -242,6 +241,13 @@
       letter-spacing: .18em;
       text-transform: uppercase;
       color: var(--muted2);
+    }
+
+    .reveal .slides>section.present,
+    .reveal .slides>section>section.present{
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
     }
 
     /* Reveal tweaks */
