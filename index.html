@@ -46,6 +46,7 @@
       height: 100%;
       padding: 88px 72px 52px;
       box-sizing: border-box;
+      position: relative;
     }
 
     /* Headings */
@@ -212,52 +213,27 @@
       height: 64px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 0 56px;
       background: #0f1d20;
       color: #ffffff;
       border-bottom: 1px solid rgba(255,255,255,.08);
       z-index: 20;
     }
-    .topbar .brand-lockup{
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+    .topbar .logo-img{
+      height: 30px;
+      width: auto;
+      display: block;
     }
-    .topbar .logo{
-      font-weight: 700;
-      letter-spacing: .28em;
-      font-size: 16px;
-    }
-    .topbar .sub{
-      font-size: 11px;
+
+    .slide-author{
+      position: absolute;
+      right: 72px;
+      bottom: 28px;
+      font-size: 12px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: rgba(255,255,255,.7);
-    }
-    .topbar .nav{
-      display: flex;
-      gap: 18px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: rgba(255,255,255,.75);
-    }
-    .topbar .actions{
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .topbar .reserve{
-      background: #ffffff;
-      color: #0f1d20;
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-size: 11px;
-      border: 1px solid #ffffff;
+      color: var(--muted2);
     }
 
     /* Reveal tweaks */
@@ -270,12 +246,12 @@
     @media (max-width: 1100px){
       .grid, .grid-2, .grid-3{ grid-template-columns: 1fr; }
       .topbar{ padding: 0 24px; height: 56px; }
-      .topbar .nav{ display: none; }
-      .topbar .logo{ font-size: 14px; letter-spacing: .2em; }
+      .topbar .logo-img{ height: 24px; }
       .reveal .slides section{ padding: 72px 28px 36px; }
       .reveal h1{ font-size: 44px; }
       .reveal h2{ font-size: 30px; }
       .reveal h2:after{ display: none; }
+      .slide-author{ right: 28px; bottom: 18px; }
     }
   </style>
 </head>
@@ -283,21 +259,7 @@
 
   <!-- Top bar inspired by the hotel landing -->
   <div class="topbar" aria-hidden="true">
-    <div class="brand-lockup">
-      <div class="logo">NEPTUNO</div>
-      <div class="sub">Hotel & Spa · 4* Superior</div>
-    </div>
-    <div class="nav">
-      <span>Hotel</span>
-      <span>Ofertas</span>
-      <span>Gastronomía</span>
-      <span>Shama Spa</span>
-      <span>Eventos</span>
-      <span>Historia</span>
-    </div>
-    <div class="actions">
-      <span class="reserve">Reservas</span>
-    </div>
+    <img class="logo-img" src="logo.jpg" alt="Neptuno Hotel & Spa" />
   </div>
 
   <div class="reveal">
@@ -306,13 +268,13 @@
       <!-- 1. Portada -->
       <section>
         <div class="pill"><span class="dot"></span> Presentación interna · Dirección Neptuno</div>
-        <h1 style="margin-top: 18px;">Plan Estratégico de Social Media<br/>2026</h1>
+        <h1 style="margin-top: 18px;">Estrategia Social Media 2026<br/>para Dirección General</h1>
         <p>Campaña paraguas <strong>“Momentos Neptuno”</strong> + storytelling + plan multicanal orientado a reservas y reputación.</p>
         <div class="divider"></div>
         <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
-          <span class="cta">Objetivo: reservas</span>
           <span class="pill" style="text-transform:none; letter-spacing:.2px;">Calella · Costa de Barcelona · 4* Superior</span>
         </div>
+        <div class="slide-author">Edu Dangla Gomes</div>
       </section>
 
       <!-- 2. Agenda -->
@@ -431,28 +393,17 @@
         </div>
       </section>
 
-      <!-- 7. Otros canales + conclusiones -->
+      <!-- 7. Auditoría social media: Conclusiones -->
       <section>
-        <h2>Otros canales y conclusiones</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>Twitter (X) / LinkedIn</h3>
-            <ul>
-              <li><strong>X:</strong> canal de atención rápida y reputación.</li>
-              <li><strong>LinkedIn:</strong> branding corporativo + talento.</li>
-              <li>Uso actual muy puntual, bajo potencial explotado.</li>
-              <li>Riesgo: exposición pública si no se gestiona bien.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Conclusiones clave</h3>
-            <ul>
-              <li>Base sólida + reputación alta = punto de partida fuerte.</li>
-              <li>Necesidad de <strong>consistencia</strong> y narrativa emocional.</li>
-              <li>Integrar UGC y presencia en TikTok de forma estratégica.</li>
-              <li>Community care proactivo para proteger reputación.</li>
-            </ul>
-          </div>
+        <h2>Auditoría social media: Conclusiones</h2>
+        <div class="card">
+          <ul>
+            <li><strong>Base actual:</strong> comunidad sólida en IG/FB + reputación alta en reviews.</li>
+            <li><strong>Brechas:</strong> falta de consistencia narrativa, baja participación UGC y presencia débil en TikTok.</li>
+            <li><strong>Oportunidades:</strong> Reels/Stories con storytelling, reutilizar testimonios y activar eventos locales + ads de proximidad.</li>
+            <li><strong>Riesgos:</strong> competencia intensa en el corredor del Maresme y saturación de contenidos.</li>
+            <li><strong>Competencia directa:</strong> Hotel Bernat II (Calella) - 4* Superior con spa; htop Calella Palace Family & Spa (Calella); AQUA Hotel Onabrava & Spa (Santa Susanna); AQUA Hotel Aquamarina & Spa (Santa Susanna); L'Azure Hotel (Lloret de Mar) - 4* Superior.</li>
+          </ul>
         </div>
       </section>
 
@@ -472,9 +423,9 @@
           <div class="card">
             <h3>Normas de interacción</h3>
             <ul>
-              <li>Responder comentarios y DMs en &lt; 24h.</li>
-              <li>Horario operativo 9:00–21:00 con autorespuesta.</li>
-              <li>Protocolo negativo: disculpa -> privado -> solución.</li>
+              <li>Responder comentarios y DMs en &lt; 4h.</li>
+              <li>Atención 24/7 por ser un hotel (turnos y seguimiento constante).</li>
+              <li>Conversación cliente-guest: tono calmado, empático y orientado a soluciones (0 fricción).</li>
               <li>Fomentar #MomentosNeptuno y repost semanal.</li>
             </ul>
           </div>
@@ -488,19 +439,19 @@
           <div class="card">
             <h3>Estilo visual</h3>
             <ul>
-              <li>Fotos luminosas y reales (experiencias, personas).</li>
-              <li>Paleta: azules/turquesas + blanco (mar/spa/limpieza).</li>
-              <li>Consistencia en filtros, tipografías y firma de marca.</li>
+              <li>Imágenes luminosas, reales y humanas (parejas, familias, equipo).</li>
+              <li>Paleta: azules/turquesas + blanco para calma y limpieza.</li>
+              <li>Consistencia en filtros, tipografías y composición.</li>
               <li>Logo discreto como sello en creatividades clave.</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Ejemplos de estilo</h3>
+            <h3>Aplicación práctica</h3>
             <ul>
-              <li>Post emocional: historias de huéspedes con #MomentosNeptuno.</li>
-              <li>Story spa: tour corto + texto evocador + CTA suave.</li>
-              <li>Copy AIDA para paquetes (atención -> deseo -> acción).</li>
-              <li>Recurrencia de ritmos: #SpaTuesday, #FoodFriday.</li>
+              <li>Post Día Mundial del Turismo: historia real + #MomentosNeptuno.</li>
+              <li>Story Shama Spa: tour corto con copy “tu oasis de calma”.</li>
+              <li>Copy AIDA para paquete “fin de semana gastronómico”.</li>
+              <li>Subtítulos EN en Reels para público internacional.</li>
             </ul>
           </div>
         </div>
@@ -513,19 +464,19 @@
           <div class="card">
             <h3>Segmentos principales</h3>
             <ul>
-              <li><strong>Parejas 25–35</strong> (escapada romántica).</li>
-              <li><strong>Familias 35–50</strong> (comodidad y seguridad).</li>
-              <li><strong>Internacional wellness/foodies</strong> 30–45.</li>
-              <li><strong>Público local</strong> (spa day, restaurante, eventos).</li>
+              <li><strong>Parejas jóvenes</strong>: escapada wellness de fin de semana.</li>
+              <li><strong>Familias</strong>: seguridad, comodidad y planes con niños.</li>
+              <li><strong>Internacional wellness/foodies</strong>: spa + gastronomía + autenticidad.</li>
+              <li><strong>Público local</strong>: spa day, restaurante y eventos.</li>
             </ul>
           </div>
           <div class="card">
             <h3>Comportamiento digital</h3>
             <ul>
-              <li>Instagram y TikTok para inspiración.</li>
-              <li>Facebook para recomendaciones locales/familia.</li>
-              <li>YouTube y blogs para investigación profunda.</li>
-              <li>Reviews como gatillo final de confianza.</li>
+              <li>Instagram y TikTok para inspiración visual.</li>
+              <li>Facebook para recomendaciones locales y comunidad.</li>
+              <li>Blogs y reviews para investigación y decisión.</li>
+              <li>WhatsApp para consultas rápidas y planes locales.</li>
             </ul>
           </div>
         </div>
@@ -538,19 +489,19 @@
           <div class="card">
             <h3>Parejas jóvenes urbanas</h3>
             <ul>
-              <li>Motivación: reconectar, celebrar fechas especiales.</li>
-              <li>Momentos: noches entre semana, decisiones rápidas.</li>
-              <li>Plataformas: Instagram + TikTok + reviews.</li>
-              <li>Contenido que funciona: Reels románticos, paquetes.</li>
+              <li>Motivación: reconectar, celebrar y desconectar juntos.</li>
+              <li>Momentos: noches entre semana y decisiones de última hora.</li>
+              <li>Plataformas: Instagram, TikTok y reviews.</li>
+              <li>Contenido que funciona: Reels románticos, packs wellness.</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Familias 35–50</h3>
+            <h3>Familias</h3>
             <ul>
-              <li>Motivación: seguridad, servicios y planes con niños.</li>
-              <li>Momentos: planificación 2–3 meses antes.</li>
-              <li>Plataformas: Facebook, YouTube, TripAdvisor.</li>
-              <li>Contenido que funciona: testimonios, info clara.</li>
+              <li>Motivación: seguridad, comodidad y actividades infantiles.</li>
+              <li>Momentos: planificación con 2–3 meses de antelación.</li>
+              <li>Plataformas: Facebook, TripAdvisor/Google y blogs.</li>
+              <li>Contenido que funciona: testimonios, info clara y útil.</li>
             </ul>
           </div>
         </div>
@@ -563,19 +514,19 @@
           <div class="card">
             <h3>Internacional wellness/foodies</h3>
             <ul>
-              <li>Motivación: spa, gastronomía, autenticidad local.</li>
-              <li>Momentos: planificación 1–2 meses.</li>
-              <li>Plataformas: Instagram, YouTube, TripAdvisor.</li>
+              <li>Motivación: spa, gastronomía y autenticidad local.</li>
+              <li>Momentos: planificación con 1–2 meses de antelación.</li>
+              <li>Plataformas: Instagram, Facebook y TripAdvisor.</li>
               <li>Necesidad: posts bilingües y subtítulos EN.</li>
             </ul>
           </div>
           <div class="card">
             <h3>Público local</h3>
             <ul>
-              <li>Motivación: spa day, eventos, cenas especiales.</li>
-              <li>Momentos: respuesta a planes de último momento.</li>
-              <li>Plataformas: Facebook, Instagram, WhatsApp.</li>
-              <li>Contenido que funciona: ofertas locales y eventos.</li>
+              <li>Motivación: spa day, cenas especiales y eventos locales.</li>
+              <li>Momentos: respuesta a planes de último minuto.</li>
+              <li>Plataformas: Facebook, Instagram y WhatsApp.</li>
+              <li>Contenido que funciona: ofertas locales y agenda de eventos.</li>
             </ul>
           </div>
         </div>
@@ -591,7 +542,7 @@
               <li>Hootsuite para monitorizar y responder.</li>
               <li>Talkwalker / Awario para menciones y sentimiento.</li>
               <li>Google Alerts para prensa y blogs.</li>
-              <li>Panel mensual con picos y share of voice.</li>
+              <li>Google Ads para paid media de la web + PowerBI para analítica.</li>
             </ul>
           </div>
           <div class="card">
@@ -678,7 +629,7 @@
               <li>Reels/TikTok (30–60s) para emoción y descubrimiento.</li>
               <li>Carruseles con guías y beneficios.</li>
               <li>Stories diarias + encuestas + preguntas.</li>
-              <li>Video largo mensual (YouTube).</li>
+              <li>Contenido informativo para resolver dudas frecuentes.</li>
             </ul>
           </div>
         </div>
@@ -713,12 +664,12 @@
       <section>
         <h2>Campaña esporádica “agresiva”</h2>
         <div class="card">
-          <h3>“Calella se desconecta” (72h)</h3>
+          <h3>“El hotel que te pide apagar el móvil” (48h)</h3>
           <ul>
-            <li><strong>Objetivo:</strong> pico de menciones, UGC y prensa local.</li>
-            <li><strong>Activación:</strong> takeover de creadores + reto viral “3 señales de que necesitas Neptuno”.</li>
-            <li><strong>Gancho comercial:</strong> paquete limitado 72h (spa + gastronomía).</li>
-            <li><strong>KPIs:</strong> reach, menciones, saves, CTR y reservas con código.</li>
+            <li><strong>Objetivo:</strong> PR y menciones con un gesto diferencial de desconexión real.</li>
+            <li><strong>Activación:</strong> caja “Mobile Detox” en check-in + reto “24h sin pantalla”.</li>
+            <li><strong>Gancho comercial:</strong> pack Detox 24h (spa + gastronomía + late checkout).</li>
+            <li><strong>KPIs:</strong> menciones, cobertura en prensa, UGC post-estancia, CTR y reservas con código.</li>
           </ul>
         </div>
       </section>
@@ -765,11 +716,10 @@
             <h3>Conversión + reputación</h3>
             <ul>
               <li>5% conversión social a reservas directas.</li>
-              <li>200 leads (newsletter/WhatsApp) en 12 meses.</li>
               <li>50 paquetes especiales vendidos vía redes.</li>
               <li>Rating &gt;= 4.5/5 sostenido en reviews.</li>
-              <li>100 encuestas post-estancia con 90% satisfacción.</li>
-              <li>90% DMs respondidos en &lt; 4h (horario).</li>
+              <li>100 encuestas post-estancia con 90% de satisfacción.</li>
+              <li>90% DMs respondidos en &lt;4h (24/7).</li>
             </ul>
           </div>
         </div>
@@ -798,7 +748,7 @@
               <tr>
                 <td>Consideration</td>
                 <td>Interés y preferencia</td>
-                <td>Testimonios, Q&A, Stories, YouTube</td>
+                <td>Testimonios, Q&A, Stories, FAQs</td>
                 <td>ER, saves, clicks, DMs</td>
               </tr>
               <tr>
@@ -818,98 +768,57 @@
         </div>
       </section>
 
-      <!-- 22. Estrategia multicanal -->
+      <!-- 22. Plan por canal: Instagram + TikTok -->
       <section>
-        <h2>Estrategia multicanal: rol por plataforma</h2>
-        <div class="grid-2 small">
-          <div class="card">
-            <h3>Instagram</h3>
-            <ul>
-              <li>Canal principal de inspiración y marca.</li>
-              <li>Reels + carruseles + Stories diarias.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Facebook</h3>
-            <ul>
-              <li>Comunidad local y familiar.</li>
-              <li>Events, grupos y ads geolocalizados.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>TikTok</h3>
-            <ul>
-              <li>Descubrimiento joven y viralidad.</li>
-              <li>Trends adaptadas + tips de destino.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>YouTube / Blog</h3>
-            <ul>
-              <li>Contenido largo para investigación.</li>
-              <li>Guías de Calella y tours del hotel.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- 23. Plan por canal: Instagram + Facebook -->
-      <section>
-        <h2>Plan por canal: Instagram & Facebook</h2>
+        <h2>Plan por canal: Instagram + TikTok</h2>
         <div class="grid-2">
           <div class="card">
             <h3>Instagram</h3>
             <ul>
               <li>4–5 posts/semana (mín. 1 Reel).</li>
-              <li>Stories casi diarias + stickers interactivos.</li>
+              <li>Stories diarias + stickers interactivos.</li>
               <li>Ritmos: #SpaTuesday, #FoodFriday, #SundayStories.</li>
               <li>Link en bio optimizado + CTAs suaves.</li>
             </ul>
           </div>
+          <div class="card">
+            <h3>TikTok</h3>
+            <ul>
+              <li>Objetivo: awareness y descubrimiento.</li>
+              <li>Mismo contenido que en Instagram (Reels) con ajustes mínimos.</li>
+              <li>Cadencia 3 vídeos/semana para ganar presencia.</li>
+              <li>Foco en experiencia, spa y momentos humanos.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 23. Plan por canal: Facebook + TripAdvisor & Google -->
+      <section>
+        <h2>Plan por canal: Facebook + TripAdvisor & Google</h2>
+        <div class="grid-2">
           <div class="card">
             <h3>Facebook</h3>
             <ul>
               <li>3–4 posts/semana en horarios tarde/noche.</li>
               <li>Events para música en vivo y activaciones.</li>
               <li>Grupo “Amigos de Neptuno” como comunidad.</li>
-              <li>Ads mensuales (ej. 300€) a públicos lookalike.</li>
+              <li>Ads mensuales a públicos lookalike y proximidad.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>TripAdvisor & Google</h3>
+            <ul>
+              <li>Respuesta sistemática a reseñas con tono calmado.</li>
+              <li>Reutilizar testimonios positivos en redes.</li>
+              <li>Incentivar reviews post-estancia con CTA simple.</li>
+              <li>Objetivo: mantener &gt;= 4.5/5 y mejorar ranking local.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- 24. Plan por canal: TikTok + YouTube + Blog -->
-      <section>
-        <h2>Plan por canal: TikTok, YouTube y Blog</h2>
-        <div class="grid-3 small">
-          <div class="card">
-            <h3>TikTok</h3>
-            <ul>
-              <li>Lanzamiento + 3 vídeos/semana.</li>
-              <li>Colabs con TikTokers locales.</li>
-              <li>Series: “5 cosas de Calella”.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>YouTube</h3>
-            <ul>
-              <li>1 vídeo/mes (2–5 min).</li>
-              <li>Tours, wellness weekend, gastronomía.</li>
-              <li>Reutilizable en web y campañas.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Blog</h3>
-            <ul>
-              <li>1 artículo cada 2 semanas.</li>
-              <li>Guías de destino + entrevistas.</li>
-              <li>Material base para carruseles.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- 25. Influencers + partners -->
+      <!-- 24. Influencers + partners -->
       <section>
         <h2>Influencers y partners</h2>
         <div class="grid-2 small">
@@ -934,7 +843,7 @@
         </div>
       </section>
 
-      <!-- 26. Calendario editorial mensual -->
+      <!-- 25. Calendario editorial mensual -->
       <section>
         <h2>Calendario editorial mensual (ejemplo)</h2>
         <div class="grid-2 small">
@@ -961,7 +870,7 @@
         </div>
       </section>
 
-      <!-- 27. Estacionalidad -->
+      <!-- 26. Estacionalidad -->
       <section>
         <h2>Estacionalidad anual</h2>
         <div class="grid-2 small">
@@ -996,21 +905,21 @@
         </div>
       </section>
 
-      <!-- 28. Comunidad + SAC -->
+      <!-- 27. Comunidad + SAC -->
       <section>
         <h2>Comunidad y atención (SAC 2.0)</h2>
         <div class="card">
           <ul>
             <li>Community Manager principal + backup diario.</li>
-            <li>Cobertura 9:00–21:00 con autorespuesta nocturna.</li>
-            <li>Protocolo de crisis: respuesta pública + privado + seguimiento.</li>
+            <li>Cobertura 24/7 con turnos y seguimiento continuo.</li>
+            <li>Guest relations: conversación calmada y orientada a soluciones para evitar fricción.</li>
             <li>Moderación: ocultar spam, responder críticas constructivas.</li>
             <li>WhatsApp Business para atención rápida y leads.</li>
           </ul>
         </div>
       </section>
 
-      <!-- 29. Medición -->
+      <!-- 28. Medición -->
       <section>
         <h2>Medición y optimización</h2>
         <div class="grid-2">
@@ -1019,7 +928,7 @@
             <ul>
               <li>Followers, ER, top formatos, tiempo de respuesta.</li>
               <li>CTR, leads, reservas y ROI social.</li>
-              <li>Share of voice y sentimiento.</li>
+              <li>Sentimiento y reputación en reviews.</li>
             </ul>
           </div>
           <div class="card">
@@ -1034,7 +943,7 @@
         </div>
       </section>
 
-      <!-- 30. Roadmap + cierre -->
+      <!-- 29. Roadmap + cierre -->
       <section>
         <h2>Próximos 30 días + cierre</h2>
         <div class="grid-2">
@@ -1057,7 +966,7 @@
         </div>
       </section>
 
-      <!-- 31. Anexo bibliografía -->
+      <!-- 30. Anexo bibliografía -->
       <section>
         <h2>Anexo · Fuentes</h2>
         <div class="card small">
