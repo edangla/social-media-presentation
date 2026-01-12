@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plan Estratégico Social Media — Neptuno Hotel & Spa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Reveal.js (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css" />
+
+  <!-- Theme (custom, inspired by Neptuno landing: dark overlay + white type + teal accents) -->
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.10);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.58);
+      --line: rgba(255,255,255,.18);
+      --accent: #35d0c2; /* spa/sea */
+      --accent2: #9be9e1;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    .reveal{
+      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      letter-spacing: .2px;
+    }
+
+    /* Background image like landing page (replace assets/hero.jpg with a real photo) */
+    .reveal:before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(11,15,20,.92) 0%, rgba(11,15,20,.72) 55%, rgba(11,15,20,.92) 100%),
+        url('assets/hero.jpg') center/cover no-repeat;
+      filter: saturate(1.05);
+      z-index: -2;
+    }
+    .reveal:after{
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(1200px 700px at 65% 10%, rgba(53,208,194,.18), transparent 60%);
+      z-index: -1;
+    }
+
+    .reveal .slides{ text-align: left; }
+
+    /* Headings */
+    .reveal h1, .reveal h2, .reveal h3{
+      text-transform: none;
+      line-height: 1.08;
+      letter-spacing: 0;
+      margin: 0 0 18px 0;
+    }
+    .reveal h1{ font-size: 64px; font-weight: 800; }
+    .reveal h2{ font-size: 42px; font-weight: 800; }
+    .reveal h3{ font-size: 28px; font-weight: 700; }
+    .reveal p{ color: var(--muted); font-size: 20px; line-height: 1.45; }
+    .reveal ul{ color: var(--muted); font-size: 22px; line-height: 1.35; margin: 12px 0 0 0; }
+    .reveal li{ margin: 10px 0; }
+    .reveal strong{ color: var(--text); font-weight: 700; }
+    .reveal a{ color: var(--accent2); }
+
+    /* Layout helpers */
+    .grid{
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .grid-3{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .card{
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .card h3{ margin-bottom: 10px; }
+
+    .pill{
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+    .pill .dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(53,208,194,.18);
+    }
+
+    .kpi{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .kpi .row{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+    }
+    .kpi .num{
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: .2px;
+      min-width: 80px;
+    }
+    .kpi .lbl{
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .cta{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    .cta:before{
+      content: "";
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(53,208,194,.16);
+    }
+
+    .divider{
+      height: 1px;
+      background: var(--line);
+      margin: 18px 0;
+    }
+
+    .footer{
+      position: fixed;
+      left: 28px;
+      bottom: 18px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      z-index: 10;
+      opacity: .9;
+    }
+    .brand{
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(8px);
+    }
+    .brand .name{ font-weight: 800; letter-spacing: .7px; }
+    .brand .sub{ font-size: 12px; color: var(--muted2); }
+
+    /* Reveal tweaks */
+    .reveal .progress{ background: rgba(255,255,255,.08); }
+    .reveal .progress span{ background: var(--accent); }
+    .reveal .controls button{ color: rgba(255,255,255,.6); }
+    .reveal .slide-number{ color: rgba(255,255,255,.55); }
+
+    /* Responsive */
+    @media (max-width: 1100px){
+      .grid{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .reveal h1{ font-size: 48px; }
+      .reveal h2{ font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- subtle brand footer like header bar on landing -->
+  <div class="footer" aria-hidden="true">
+    <div class="brand">
+      <div class="name">NEPTUNO</div>
+      <div class="sub">Hotel & Spa · Plan Social Media 2026</div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 1. Portada -->
+      <section>
+        <div class="pill"><span class="dot"></span> Presentación interna · Equipo Neptuno</div>
+        <h1 style="margin-top: 18px;">Plan Estratégico de Social Media<br/>2026</h1>
+        <p>Campaña paraguas <strong>“Momentos Neptuno”</strong> + contenido multicanal + medición orientada a reservas y reputación.</p>
+        <div class="divider"></div>
+        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+          <span class="cta">Reservas (objetivo)</span>
+          <span class="pill" style="text-transform:none; letter-spacing:.2px;">Calella · Costa de Barcelona · 4* Superior</span>
+        </div>
+        <aside class="notes">
+          Apertura: "Hoy os traigo una hoja de ruta realista para que Neptuno gane visibilidad, comunidad y reservas directas desde redes".
+        </aside>
+      </section>
+
+      <!-- 2. Agenda -->
+      <section>
+        <h2>Agenda</h2>
+        <div class="card">
+          <ul>
+            <li><strong>Contexto</strong> y auditoría de canales</li>
+            <li><strong>Audiencias</strong> + Social Listening</li>
+            <li><strong>Storytelling</strong> y campaña emocional</li>
+            <li><strong>Objetivos</strong> y KPIs</li>
+            <li><strong>Plan de acción</strong> (canales, calendario, influencers, comunidad)</li>
+            <li><strong>Medición</strong> y optimización</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3. Resumen ejecutivo -->
+      <section>
+        <h2>Resumen ejecutivo</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Situación</h3>
+            <ul>
+              <li>Base sólida en <strong>Instagram</strong> y <strong>Facebook</strong> + reputación alta en <strong>Google/TripAdvisor</strong>.</li>
+              <li>Brechas: consistencia, storytelling, participación (UGC) y presencia en <strong>TikTok</strong>.</li>
+            </ul>
+            <div class="divider"></div>
+            <h3>Propuesta</h3>
+            <ul>
+              <li>Campaña paraguas <strong>“Momentos Neptuno”</strong> (always-on).</li>
+              <li>Video corto como motor (Reels/TikTok) + guías/beneficio (carruseles).</li>
+              <li>Social listening + community care como ventaja competitiva.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Impacto esperado (12 meses)</h3>
+            <div class="kpi">
+              <div class="row"><div class="num">+30%</div><div class="lbl">Seguidores genuinos en IG/FB</div></div>
+              <div class="row"><div class="num">5%</div><div class="lbl">Engagement rate objetivo</div></div>
+              <div class="row"><div class="num">200</div><div class="lbl">Leads (newsletter/WhatsApp) desde redes</div></div>
+              <div class="row"><div class="num">≥4,5</div><div class="lbl">Rating en Google/TripAdvisor sostenido</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Contexto -->
+      <section>
+        <h2>1) Contexto social de marca</h2>
+        <div class="card">
+          <ul>
+            <li>Neptuno Hotel & Spa: <strong>4* Superior</strong> en el centro de Calella, a pasos del mar y a 50 km de Barcelona.</li>
+            <li>Propuesta de valor: <strong>bienestar</strong> (spa), <strong>sostenibilidad</strong>, <strong>gastronomía</strong>, trato cercano y espacios para eventos.</li>
+            <li>En turismo, redes = <strong>inspiración + confianza</strong> (reviews + prueba social).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. Auditoría canales -->
+      <section>
+        <h2>Auditoría social media (síntesis)</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Facebook</h3>
+            <p><strong>Fortaleza:</strong> comunidad local/familias.<br/>
+               <strong>Mejora:</strong> frecuencia y storytelling.<br/>
+               <strong>Oportunidad:</strong> Events + Ads proximidad + UGC.</p>
+          </div>
+          <div class="card">
+            <h3>Instagram</h3>
+            <p><strong>Fortaleza:</strong> visual atractivo (+8k).<br/>
+               <strong>Mejora:</strong> identidad consistente + participación.<br/>
+               <strong>Oportunidad:</strong> Reels de experiencia + micro-influencers.</p>
+          </div>
+          <div class="card">
+            <h3>Reviews + TikTok</h3>
+            <p><strong>Reviews:</strong> reputación excelente (contenido reutilizable).<br/>
+               <strong>TikTok:</strong> gap → descubrimiento joven, requiere guía creativa.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Identidad -->
+      <section>
+        <h2>Manual de identidad digital</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Tono de voz</h3>
+            <ul>
+              <li>Cercano, acogedor y profesional.</li>
+              <li>Calma mediterránea: positivo, inclusivo, sin exageración publicitaria.</li>
+              <li>CTA sutil: preguntar, invitar, inspirar.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Estilo visual</h3>
+            <ul>
+              <li>Imágenes luminosas y reales (experiencias, personas).</li>
+              <li>Paleta: azules/turquesas + blanco (mar/spa/limpieza).</li>
+              <li>Consistencia: tipografías, filtros y firma de marca.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Audiencias -->
+      <section>
+        <h2>2) Audiencias (segmentos clave)</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Segmentos</h3>
+            <ul>
+              <li><strong>Parejas 25–35</strong>: escapada romántica (IG/TikTok/Reviews).</li>
+              <li><strong>Familias 35–50</strong>: seguridad y comodidad (FB/Reviews/YouTube).</li>
+              <li><strong>Internacional wellness/foodies</strong> 30–45 (IG/YouTube/TripAdvisor).</li>
+              <li><strong>Público local</strong>: spa day, restaurante, eventos (FB/IG/WhatsApp).</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Implicaciones</h3>
+            <ul>
+              <li>Contenido por momento (noche entre semana vs planificación 2–3 meses).</li>
+              <li>Necesario: subtítulos/EN para internacional.</li>
+              <li>Calendario estacional (verano vs invierno) sin “apagón” digital.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Social listening -->
+      <section>
+        <h2>Social Listening (escucha activa)</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Qué monitorizamos</h3>
+            <ul>
+              <li>Marca: “Neptuno Hotel & Spa”, “Hotel Neptuno Calella”.</li>
+              <li>Experiencia: “spa Calella”, “hotel romántico Barcelona”.</li>
+              <li>Destino y hashtags: #Calella, #CostaBarcelona, etc.</li>
+              <li>Competidores (share of voice + picos por campañas).</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Cómo lo usamos</h3>
+            <ul>
+              <li>Temas recurrentes → contenido (guías, Q&A, reels).</li>
+              <li>Feedback → mejoras operativas y reputación.</li>
+              <li>Detección de voces clave → colaboraciones.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Storytelling -->
+      <section>
+        <h2>3) Storytelling: “Momentos Neptuno”</h2>
+        <div class="card">
+          <p><strong>Idea central:</strong> vendemos experiencias, no habitaciones. Convertimos al huésped en protagonista.</p>
+          <div class="divider"></div>
+          <div class="grid">
+            <div class="card" style="background: rgba(255,255,255,.04);">
+              <h3>Always-on</h3>
+              <ul>
+                <li>Serie vertical: <strong>“Diarios de Neptuno”</strong> (30–60s).</li>
+                <li>Historias de huéspedes + equipo humano.</li>
+                <li>UGC con #MomentosNeptuno (repost semanal).</li>
+              </ul>
+            </div>
+            <div class="card" style="background: rgba(53,208,194,.08); border-color: rgba(53,208,194,.28);">
+              <h3>Valores</h3>
+              <ul>
+                <li>Relajación, felicidad compartida y pertenencia.</li>
+                <li>Hospitalidad genuina + autenticidad local.</li>
+                <li>Sostenibilidad (acciones reales, no postureo).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Campaña agresiva -->
+      <section>
+        <h2>Campaña esporádica “agresiva” (PR + viralidad)</h2>
+        <div class="card">
+          <h3>“Calella se desconecta” (72h)</h3>
+          <ul>
+            <li>Objetivo: pico de <strong>menciones</strong>, UGC y cobertura en medios locales/lifestyle.</li>
+            <li>Activación: takeover de creadores + reto viral “3 señales de que necesitas Neptuno”.</li>
+            <li>Gancho comercial: paquete limitado “72h de desconexión” (spa + gastronomía).</li>
+            <li>Medición: reach, menciones, saves, CTR y reservas con código campaña.</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          Conectar con el equipo: esta campaña se hace 1–2 veces/año para “romper” el algoritmo y generar conversación.
+        </aside>
+      </section>
+
+      <!-- 11. Objetivos -->
+      <section>
+        <h2>4) Objetivos y KPIs (12 meses)</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Awareness</h3>
+            <ul>
+              <li>+30% followers IG/FB</li>
+              <li>3 piezas &gt; 50k impresiones</li>
+              <li>5 micro-influencers → ≥100k reach</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Engagement</h3>
+            <ul>
+              <li>ER objetivo 5%</li>
+              <li>50 UGC/año (#MomentosNeptuno)</li>
+              <li>Grupo FB: 100 miembros activos</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Conversión + reputación</h3>
+            <ul>
+              <li>5% social → reservas (UTM/códigos)</li>
+              <li>200 leads (WhatsApp/newsletter)</li>
+              <li>Rating ≥4,5/5 sostenido</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. Customer Journey -->
+      <section>
+        <h2>Customer Journey (funnel social)</h2>
+        <div class="card">
+          <div class="grid">
+            <div>
+              <h3>Fases</h3>
+              <ul>
+                <li><strong>Awareness</strong>: inspirar y captar atención</li>
+                <li><strong>Consideration</strong>: resolver dudas + prueba social</li>
+                <li><strong>Conversion</strong>: CTA claro + retargeting</li>
+                <li><strong>Loyalty</strong>: UGC + reseñas + comunidad</li>
+              </ul>
+            </div>
+            <div>
+              <h3>KPIs por fase</h3>
+              <ul>
+                <li>Alcance, visualización, menciones</li>
+                <li>ER, saves, DMs, clicks</li>
+                <li>CTR, CPA, reservas atribuibles</li>
+                <li>Rating, repetición, UGC/reviews</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. Plan de acción -->
+      <section>
+        <h2>5) Plan de acción (multicanal)</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Instagram</h3>
+            <ul>
+              <li>4–5 posts/semana (mín. 1 Reel)</li>
+              <li>Stories casi diario + CTAs</li>
+              <li>Ritmos: #SpaTuesday, #FoodFriday, #SundayStories</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Facebook</h3>
+            <ul>
+              <li>3–4 posts/semana + Events</li>
+              <li>Grupo “Amigos de Neptuno”</li>
+              <li>Ads: proximidad + lookalikes + conversión</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 14. TikTok + YouTube -->
+      <section>
+        <h2>TikTok + YouTube (descubrimiento y profundidad)</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>TikTok</h3>
+            <ul>
+              <li>Lanzamiento + 3 vídeos/semana</li>
+              <li>Trends adaptadas (brand-safe) + behind-the-scenes</li>
+              <li>Iteración rápida: duplicar formatos ganadores</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>YouTube / video largo</h3>
+            <ul>
+              <li>1 vídeo/mes (2–5 min): tours, guías, wellness weekend</li>
+              <li>Reutilizable en web y campañas</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15. Comunidad y SAC -->
+      <section>
+        <h2>Comunidad y Atención (SAC 2.0)</h2>
+        <div class="card">
+          <ul>
+            <li>Community Manager + backup (cobertura 9:00–21:00 con revisiones periódicas).</li>
+            <li>SLA: <strong>DMs &lt; 4h</strong> en horario; comentarios &lt; 24h.</li>
+            <li>Protocolo negativos: responder público → mover a privado → resolución → aprendizaje.</li>
+            <li>UGC: re-shares semanales con autorización (refuerza pertenencia y confianza).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 16. Influencers -->
+      <section>
+        <h2>Influencers (micro/nano) y partners</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Estrategia</h3>
+            <ul>
+              <li>Prioridad: <strong>alineación</strong> con marca (pareja/familia/wellness/food).</li>
+              <li>Entregables estándar: 1 Reel + 3 Stories + 1 TikTok + código promo.</li>
+              <li>Medición: reach, ER, clicks, reservas con código.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Partners locales</h3>
+            <ul>
+              <li>Oficina de turismo / medios locales.</li>
+              <li>Co-sorteos con actividades (snorkel, rutas, gastronomía).</li>
+              <li>Objetivo: ampliar audiencia y reforzar autenticidad Calella.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 17. Calendario -->
+      <section>
+        <h2>Calendario y estacionalidad</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Verano</h3>
+            <ul>
+              <li>Stories diarias</li>
+              <li>Concursos semanales</li>
+              <li>Takeovers</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Otoño/Invierno</h3>
+            <ul>
+              <li>Early booking</li>
+              <li>Contenido aspiracional + quizzes</li>
+              <li>San Valentín</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Primavera</h3>
+            <ul>
+              <li>Relanzamiento</li>
+              <li>Teasers mejoras</li>
+              <li>Campaña Momentos (ola 1)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18. Medición -->
+      <section>
+        <h2>6) Medición y optimización</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Dashboard mensual</h3>
+            <ul>
+              <li>Followers, ER, top formatos, tiempos de respuesta</li>
+              <li>CTR + clicks + leads</li>
+              <li>Reservas atribuibles (UTMs/códigos) + ROI</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Rutina</h3>
+            <ul>
+              <li>Revisión semanal de contenidos (qué funciona y por qué)</li>
+              <li>Reunión bimensual de ajustes</li>
+              <li>A/B testing: creatividades, copies, horarios, audiencias</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 19. Cierre -->
+      <section>
+        <h2>Cierre</h2>
+        <div class="card">
+          <p style="font-size:22px;">
+            Con <strong>“Momentos Neptuno”</strong> como narrativa, y un plan multicanal centrado en video, comunidad y escucha activa,
+            conseguimos una presencia coherente, medible y orientada a <strong>reservas</strong> y <strong>reputación</strong>.
+          </p>
+          <div class="divider"></div>
+          <h3>Próximos 30 días</h3>
+          <ul>
+            <li>Abrir TikTok + guía creativa + calendario de 4 semanas</li>
+            <li>Set up UTMs + dashboard + templates de reporting</li>
+            <li>Seleccionar 5 micro-influencers + briefing + fechas</li>
+            <li>Lanzar 1ª ola de “Diarios de Neptuno”</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 20. Anexo bibliografía -->
+      <section>
+        <h2>Anexo · Fuentes</h2>
+        <div class="card">
+          <ul>
+            <li>Materiales CETT-UB (Varela Fernández, 2023): Audiencias digitales, Storytelling, Analítica, Influencers.</li>
+            <li>Web oficial Neptuno (servicios/experiencias/valores).</li>
+            <li>Observación de estilo comunicativo en Facebook/Instagram (2021–2024).</li>
+            <li>Artículos: Mews (estrategias social media hoteles), ClickAge (turismo).</li>
+            <li>Insights hipotéticos basados en investigación de mercado y experiencia del autor.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      transition: 'fade',
+      backgroundTransition: 'fade',
+      controls: true,
+      progress: true,
+      center: false,
+      margin: 0.09,
+      width: 1280,
+      height: 720,
+      keyboard: true
+    });
+  </script>
+</body>
+</html>
+
+<!--
+README (rápido):
+
+1) Crea un repo en GitHub (p.ej. neptuno-social-media-deck)
+2) Añade estos archivos:
+   - index.html  (este mismo)
+   - /assets/hero.jpg  (una foto del hotel o la captura; ideal 1920x1080)
+   - /assets/favicon.png (opcional)
+
+3) Activa GitHub Pages:
+   Settings → Pages → Build and deployment → Deploy from a branch
+   Branch: main / root
+
+4) Personalización:
+   - Cambia el título, el subtítulo y los KPIs si queréis.
+   - Sustituye hero.jpg por una imagen real del hotel (rooftop/spa/pareja) para que encaje con la landing.
+
+Atajos Reveal:
+- Flechas para navegar
+- 'S' abre speaker notes (si quisieras usarlo en modo presentador)
+-->
